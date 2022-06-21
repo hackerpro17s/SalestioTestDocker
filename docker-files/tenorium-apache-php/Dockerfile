@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y  \
-    apache2=2.4.41-4ubuntu3.11  \
+    apache2  \
     php7.4  \
     curl \
     php7.4-curl \
