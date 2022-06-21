@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  nodejs:
+    image: "node:17.7.1"
+    volumes:
+      - "./www:/var/www"
