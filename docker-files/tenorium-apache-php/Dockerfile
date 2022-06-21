@@ -9,7 +9,10 @@ RUN apt-get update && \
     curl \
     php7.4-curl \
     php7.4-xml \
-    git
+    php7.4-zip \
+    php7.4-mysql \
+    git \
+    unzip
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
