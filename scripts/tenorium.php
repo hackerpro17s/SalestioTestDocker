@@ -9,6 +9,7 @@ build - build front and back
 build-docker - build docker containers
 up - start containers
 down - stop containers
+
 EOF;
 
 }
@@ -31,4 +32,8 @@ if ($argc > 1) {
         default:
             printHelp();
     }
+
+    return;
 }
+
+printHelp();
