@@ -1,3 +1,5 @@
 /www/*
 .idea
 data/mysql/*
+logs/apache2/*
+logs/nodejs/*

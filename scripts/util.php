@@ -9,7 +9,7 @@ class Util
 
     static function runFront(string $service, string $command)
     {
-        self::runCommand("docker-compose -p tenorium -f frontend.docker.compose.yml run $service bash -c '$command'");
+        self::runCommand("docker-compose -p tenorium -f ~/workspace/tenorium/frontend.docker.compose.yml run $service bash -c '$command'");
     }
 
     static function downContainers()

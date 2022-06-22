@@ -21,8 +21,9 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./config/apache:/etc/apache2
-      - ./www:/var/www
+      - ./config/apache:/etc/apache2:delegated
+      - ./www:/var/www:delegated
+      - ./logs/apache2:/var/log/apache2:delegated
     links:
       - db
     depends_on:
