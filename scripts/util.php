@@ -4,7 +4,7 @@ class Util
 {
     static function execute(string $service, string $command)
     {
-        self::runCommand("docker-compose -p tenorium exec $service bash -c '$command'");
+        self::runCommand("docker-compose -p tenorium -f ~/workspace/tenorium/docker-compose.yml exec $service bash -c '$command'");
     }
 
     static function runFront(string $service, string $command)
@@ -14,17 +14,17 @@ class Util
 
     static function downContainers()
     {
-        self::runCommand("docker-compose -p tenorium down");
+        self::runCommand("docker-compose -p tenorium -f ~/workspace/tenorium/docker-compose.yml down");
     }
 
     static function upContainers()
     {
-        self::runCommand("docker-compose -p tenorium up -d");
+        self::runCommand("docker-compose -p tenorium -f ~/workspace/tenorium/docker-compose.yml up -d");
     }
 
     static function buildContainers()
     {
-        self::runCommand("docker-compose -p tenorium build");
+        self::runCommand("docker-compose -p tenorium -f ~/workspace/tenorium/docker-compose.yml build");
     }
 
     private static function runCommand($command)
