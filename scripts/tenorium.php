@@ -9,6 +9,7 @@ build - build front and back
 build-docker - build docker containers
 up - start containers
 down - stop containers
+restart - restart containers
 
 EOF;
 
@@ -27,6 +28,10 @@ if ($argc > 1) {
             break;
         case 'down':
             Util::downContainers();
+            break;
+        case 'restart':
+            Util::downContainers();
+            Util::upContainers();
             break;
         case '--help':
         default:

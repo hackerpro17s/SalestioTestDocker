@@ -16,6 +16,7 @@ services:
       - "3306:3306"
   webserver:
     container_name: "tenorium-webserver"
+    restart: always
     build:
       context: docker-files/tenorium-apache-php
     ports:
