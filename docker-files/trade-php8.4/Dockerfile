@@ -54,6 +54,15 @@ RUN composer global require laravel/installer
 RUN git config --global user.email "sartyom532@gmail.com" && \
     git config --global user.name HACKERPRO17
 
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+ENV NVM_DIR /home/user/.nvm
+
+RUN . ~/.nvm/nvm.sh && \
+    nvm install 20 && \
+    nvm use 20 && \
+    nvm alias default 20
+
 EXPOSE 9000/tcp
 
 WORKDIR /var/www/panel
