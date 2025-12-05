@@ -21,7 +21,11 @@ COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 
 RUN apt-get install -y php8.4-fpm \
-    php8.4-zip
+    php8.4-zip \
+    php8.4-mbstring \
+    php8.4-curl \
+    php8.4-xml \
+    php8.4-mysql
 
 RUN mkdir -p /run/php
 
@@ -37,6 +41,9 @@ RUN echo "eval \"\$(/root/.config/composer/vendor/bin/laravel completion bash)\"
 RUN echo "PATH=\"$PATH:$HOME/.config/composer/vendor/bin\"" >> ~/.bashrc
 
 RUN composer global require laravel/installer
+
+RUN git config --global user.email "sartyom532@gmail.com" && \
+    git config --global user.name HACKERPRO17
 
 EXPOSE 9000/tcp
 
