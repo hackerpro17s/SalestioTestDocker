@@ -2,4 +2,4 @@
 
 echo "Starting build of docker containers..."
 
-docker-compose -p {{projectCommand}} -f ~/workspace/{{projectCommand}}/docker-compose.yml build
+docker-compose -p salestio -f ~/workspace/salestio/docker-compose.yml build

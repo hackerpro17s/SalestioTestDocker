@@ -9,15 +9,15 @@ You use this you need:
 
 ### Preparing to work
 
-First, clone this repository to directory ~/workspace/{{projectCommand}}
+First, clone this repository to directory ~/workspace/salestio
 
 ```bash
-git clone DOCKER_ENV_CLONE_URL ~/workspace/{{projectCommand}}
+git clone DOCKER_ENV_CLONE_URL ~/workspace/salestio
 ```
 
 Then enter new directory and run setup script:
 ```bash
-cd ~/workspace/{{projectCommand}}
+cd ~/workspace/salestio
 ./scripts/main.sh setup
 ```
 Then restart shell
@@ -27,11 +27,11 @@ Then restart shell
 > ⚠️
 > Before start make sure that you have these ports free: 80, 443, 3306 and 8080
 
-To manager containers you can use `{{projectCommand}}` command followed by subcommand.
+To manager containers you can use `salestio` command followed by subcommand.
 
 For example to start container you can run this command:
 ```bash
-{{projectCommand}} up
+salestio up
 ```
 
 Below you can find full list of commands.
@@ -78,7 +78,7 @@ Below you can find full list of commands.
 
 #### Docker commands
 
-Docker commands like `{{projectCommand}} docker build`
+Docker commands like `salestio docker build`
 
 | Name  | Usage           | Description                          |
 |-------|-----------------|--------------------------------------|

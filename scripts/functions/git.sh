@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-PROJECT_ROOT="$HOME/workspace/{{projectCommand}}/www"
+PROJECT_ROOT="$HOME/workspace/salestio/www"
 old_pwd=$(pwd);
 
 GIT_COMMAND=("$@")

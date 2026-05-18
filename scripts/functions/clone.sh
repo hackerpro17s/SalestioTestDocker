@@ -1,13 +1,13 @@
 #!/bin/bash
 
-function clone_sample() {
-	target_dir=~/workspace/{{projectCommand}}/www/sample
+function clone_site() {
+	target_dir=~/workspace/salestio/www/site
   if [ ! -d $target_dir ]; then
-    echo "Clonning sample";
-    #git clone sampleUrl $target_dir
+    echo "Clonning site";
+    git clone https://github.com/hackerpro17s/SalestioTest.git $target_dir
   else
-    echo "sample already exist"
+    echo "site already exist"
   fi
 }
 
-clone_sample
+clone_site

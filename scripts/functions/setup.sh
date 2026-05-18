@@ -3,26 +3,26 @@
 echo "Updating/Inserting alias..."
 
 if [ -f "$HOME/.bashrc" ]; then
-    sed -i '/#{{projectName}}/d' ~/.bashrc
-    echo "source \$HOME/workspace/{{projectCommand}}/scripts/main_completion.sh #{{projectName}}" >> ~/.bashrc
+    sed -i '/#Salestio/d' ~/.bashrc
+    echo "source \$HOME/workspace/salestio/scripts/main_completion.sh #Salestio" >> ~/.bashrc
 fi
     
 if [ -f "$HOME/.zshrc" ]; then
-    sed -i '/#{{projectName}}/d' ~/.zshrc
-    echo "source \$HOME/workspace/{{projectCommand}}/scripts/main_completion.sh #{{projectName}}" >> ~/.zshrc
+    sed -i '/#Salestio/d' ~/.zshrc
+    echo "source \$HOME/workspace/salestio/scripts/main_completion.sh #Salestio" >> ~/.zshrc
 fi
 
 echo "Updating /etc/hosts... (need privileged access)"
-sudo sed -i '/#{{projectName}}/d' /etc/hosts
-echo "127.0.0.1 {{projectCommand}}.tenorium.local #{{projectName}}" | sudo tee -a /etc/hosts >> /dev/null
+sudo sed -i '/#Salestio/d' /etc/hosts
+echo "127.0.0.1 salestio.tenorium.local #Salestio" | sudo tee -a /etc/hosts >> /dev/null
 
 FUNCTIONS_PATH="$( dirname -- "$0";)"
 MAIN_SCRIPT_PATH="$( dirname -- "$FUNCTIONS_PATH";)/main.sh"
 
 $MAIN_SCRIPT_PATH clone
-$MAIN_SCRIPT_PATH mkcert {{projectCommand}}.tenorium.local
+$MAIN_SCRIPT_PATH mkcert salestio.tenorium.local
 $MAIN_SCRIPT_PATH up
-cp ~/workspace/{{projectCommand}}/www/site/.env.docker ~/workspace/{{projectCommand}}/www/site/.env
+cp ~/workspace/salestio/www/site/.env.docker ~/workspace/salestio/www/site/.env
 
 echo "Waiting for MySQL..."
 until docker-compose exec -T db mariadb-admin ping -h "localhost" --silent; do
