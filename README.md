@@ -9,15 +9,15 @@ You use this you need:
 
 ### Preparing to work
 
-First, clone this repository to directory ~/workspace/smarthead
+First, clone this repository to directory ~/workspace/{{projectCommand}}
 
 ```bash
-git clone https://github.com/hackerpro17s/SmartHeadDocker.git ~/workspace/smarthead
+git clone DOCKER_ENV_CLONE_URL ~/workspace/{{projectCommand}}
 ```
 
 Then enter new directory and run setup script:
 ```bash
-cd ~/workspace/smarthead
+cd ~/workspace/{{projectCommand}}
 ./scripts/main.sh setup
 ```
 Then restart shell
@@ -27,11 +27,11 @@ Then restart shell
 > ⚠️
 > Before start make sure that you have these ports free: 80, 443, 3306 and 8080
 
-To manager containers you can use `smarthead` command followed by subcommand.
+To manager containers you can use `{{projectCommand}}` command followed by subcommand.
 
 For example to start container you can run this command:
 ```bash
-smarthead up
+{{projectCommand}} up
 ```
 
 Below you can find full list of commands.
@@ -78,7 +78,7 @@ Below you can find full list of commands.
 
 #### Docker commands
 
-Docker commands like `smarthead docker build`
+Docker commands like `{{projectCommand}} docker build`
 
 | Name  | Usage           | Description                          |
 |-------|-----------------|--------------------------------------|

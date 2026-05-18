@@ -22,7 +22,7 @@ MAIN_SCRIPT_PATH="$( dirname -- "$FUNCTIONS_PATH";)/main.sh"
 $MAIN_SCRIPT_PATH clone
 $MAIN_SCRIPT_PATH mkcert {{projectCommand}}.tenorium.local
 $MAIN_SCRIPT_PATH up
-cp ~/workspace/smarthead/www/site/.env.docker ~/workspace/smarthead/www/site/.env
+cp ~/workspace/{{projectCommand}}/www/site/.env.docker ~/workspace/{{projectCommand}}/www/site/.env
 
 echo "Waiting for MySQL..."
 until docker-compose exec -T db mariadb-admin ping -h "localhost" --silent; do

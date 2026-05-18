@@ -28,7 +28,7 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: password
-      MARIADB_DATABASE: smarthead
+      MARIADB_DATABASE: {{projectCommand}}
     ports:
       - "3306:3306"
     volumes:
@@ -64,7 +64,7 @@ services:
       DB_USERNAME: root
       DB_PASSWORD: password
   swagger:
-    container_name: "smarthead-swagger"
+    container_name: "{{projectCommand}}-swagger"
     restart: always
     image: docker.swagger.io/swaggerapi/swagger-ui
     ports:
